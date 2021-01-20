@@ -1,0 +1,23 @@
+@import 'src/styles/main';
+
+.buttons-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+
+  &__button{
+
+    &:disabled {
+      color: map-get($text, 500);
+      cursor: auto;
+    }
+
+    &_big{
+      @include container-button-protection('big')
+    }
+
+    &_small {
+      @include container-button-protection('small')
+    }
+  }
+}

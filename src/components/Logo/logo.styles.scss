@@ -1,0 +1,11 @@
+@import 'src/styles/main';
+
+.logo {
+  max-width: 100%;
+  &__image {
+    max-width: 100%;
+    border: 1px solid $black;
+    object-fit: cover;
+    display: block;
+  }
+}

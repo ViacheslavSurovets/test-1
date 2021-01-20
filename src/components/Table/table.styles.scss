@@ -1,0 +1,41 @@
+@import 'src/styles/main';
+
+.table-component {
+  width: 80%;
+  margin: 0 auto;
+  flex: 1;
+
+  &__table {
+    width: 100%;
+    text-align: center;
+
+    th {
+      color: map-get($bg, 700);
+      height: 3rem;
+      font-family: Tahoma, sans-serif;
+      font-size: 2rem;
+      white-space: nowrap;
+      background-color: map-get($warning, 500);
+      border: 1px solid map-get($bg, 700);
+      font-weight: bold;
+    }
+
+    td {
+      color: map-get($bg, 700);
+      height: 3rem;
+      font-family: Tahoma, sans-serif;
+      font-size: 1.5rem;
+      white-space: nowrap;
+      background-color: $white;
+      border: 1px solid map-get($bg, 700);
+    }
+  }
+
+
+  &__button {
+    @include container-button-protection('big');
+    margin-top: 3rem;
+  }
+}
+
+

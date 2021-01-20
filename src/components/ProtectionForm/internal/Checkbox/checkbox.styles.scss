@@ -1,0 +1,21 @@
+@import "src/styles/colors";
+
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 1 2rem;
+  margin-top: 2rem;
+
+  &__input {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__label {
+    font-size: 2rem;
+    margin-left: 2rem;
+    user-select: none;
+  }
+}

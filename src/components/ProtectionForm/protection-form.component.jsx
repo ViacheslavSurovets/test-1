@@ -30,8 +30,7 @@ const ProtectionFormComponent = () => {
           	<input
             	className='protection-form-input'
             	value={values[ i ]}
-            	data-index={i}
-            	onChange={onChange}
+            	onChange={(e) => onChange( e, i )}
             	ref={input => { inputRefs[ i ] = input }}
             	maxLength={i === 0 ? INPUTS_COUNT : '1'}
             	required

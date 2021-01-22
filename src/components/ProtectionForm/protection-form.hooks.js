@@ -24,7 +24,8 @@ export const useInput = () => {
 			keyCode = event.code
 		}
 
-    const onChange = ({ target: { value, dataset: { index: idx } } }) => {
+    // const onChange = ({ target: { value, dataset: { index: idx } } }) => {
+    const onChange = ({ target: { value } }, idx) => {
         const index = +idx
         const inputRefsIndexIncrease = inputRefs[ index + 1 ]
         const inputRefsIndexDecrease = inputRefs[ index - 1 ]

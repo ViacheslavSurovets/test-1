@@ -1,20 +1,24 @@
-import { PROTECTION_FORM_STATUS_CONSTANTS } from '../../constants'
+import { PROTECTION_FORM_STATUS_CONSTANTS, PROTECTION_FORM_DEFAULT_CONSTANTS } from '../../constants'
 
-export const isCodeStringValid = ( codeString, flag ) => {
-    if ( flag === 'wholeString' && codeString.length < 6 ) {
+const { FAILURE } = PROTECTION_FORM_STATUS_CONSTANTS
+const { INPUTS_COUNT } = PROTECTION_FORM_DEFAULT_CONSTANTS
+
+export const isCodeStringValid = ( codeString, wholeString ) => {
+    if ( wholeString && codeString.length < INPUTS_COUNT ) {
         return false
     }
-    let testCodeString = +codeString
+    const testCodeString = +codeString
     Number( testCodeString )
-    return !isNaN( testCodeString )
+    return !Number.isNaN( testCodeString )
 }
+
 
 export const charValidator = ( value, status, setStatus ) => {
     let charValidatorStatus = false
-    let testCodeString = +value
+    const testCodeString = +value
     Number( testCodeString )
 
-    if ( isNaN( testCodeString ) ) {
+    if ( Number.isNaN( testCodeString ) ) {
         charValidatorStatus = true
     }
 
@@ -22,25 +26,29 @@ export const charValidator = ( value, status, setStatus ) => {
         setStatus( {
             ...status,
             message: 'The value should be only a numbers',
-            currentStatus: PROTECTION_FORM_STATUS_CONSTANTS.FAILURE
+            currentStatus: FAILURE
         } )
 
         return false
     }
 }
 
-export const chooseStatusTextClass = ( status ) => {
-    if ( status.currentStatus === PROTECTION_FORM_STATUS_CONSTANTS.SUCCESS ) {
-        return 'protection-form__status-text protection-form__status-text_green'
-    }
-    if ( status.currentStatus === PROTECTION_FORM_STATUS_CONSTANTS.PENDING ) {
-        return 'protection-form__status-text protection-form__status-text_pending'
-    }
-    if ( status.currentStatus === PROTECTION_FORM_STATUS_CONSTANTS.FAILURE ) {
-        return 'protection-form__status-text protection-form__status-text_red'
-    }
-}
+// export const chooseStatusTextClass = ( {currentStatus} ) => {
+//     switch ( currentStatus ) {
+//         case SUCCESS:
+//             return 'protection-form__status-text_green'
+//         case PENDING:
+//             return 'protection-form__status-text_pending'
+//         case FAILURE:
+//             return 'protection-form__status-text_red'
+//
+//         default:
+//             return undefined
+//     }
+// }
+
 
 export const onDataSending = ( codeString ) => {
-    alert( `codeString is ${ codeString }` )
+	// eslint-disable-next-line no-alert
+     alert( `codeString is ${ codeString }` )
 }

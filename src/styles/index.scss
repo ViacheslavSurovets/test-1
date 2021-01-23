@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+#root {
+	min-height: 100vh;
+}
+
 html {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
@@ -16,5 +20,6 @@ html {
 
 body {
   font-size: 1.6rem;
-  color: map-get($text, 900)
+  color: map-get($text, 900);
+	min-height: 100vh;
 }

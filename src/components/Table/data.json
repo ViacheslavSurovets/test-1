@@ -1,0 +1,34 @@
+{
+	"users": [
+		{
+			"name": "John Doe",
+			"email": "johndoe@gmail.com",
+			"country": "USA",
+			"id": "1"
+		},
+		{
+			"name": "J Washington",
+			"email": "jw@gmail.com",
+			"country": "USA",
+			"id": "2"
+		},
+		{
+			"name": "Michael Addison",
+			"email": "michael@gmail.com",
+			"country": "USA",
+			"id": "3"
+		},
+		{
+			"name": "W Cherchil",
+			"email": "cherchil@gmail.com",
+			"country": "UK",
+			"id": "4"
+		},
+		{
+			"name": "Sam Farmer",
+			"email": "sam@gmail.com",
+			"country": "France",
+			"id": "5"
+		}
+	]
+}

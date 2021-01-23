@@ -1,9 +1,13 @@
 @import 'src/styles/main';
 
 .table-component {
-  width: 80%;
-  margin: 0 auto;
-  flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	margin: 0 auto;
+	flex-direction: column;
+	min-height: inherit;
 
   &__table {
     width: 100%;
@@ -35,6 +39,10 @@
   &__button {
     @include container-button-protection('big');
     margin-top: 3rem;
+		
+		&_red {
+			color: map-get($warning, 400);
+		}
   }
 }
 

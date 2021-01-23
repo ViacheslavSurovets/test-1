@@ -6,7 +6,9 @@
 	"extends": [
 		"plugin:react/recommended",
 		"airbnb",
-		"prettier"
+		"prettier",
+		"airbnb/hooks", 
+		"airbnb/whitespace"
 	],
 	"parserOptions": {
 		"ecmaFeatures": {
@@ -24,6 +26,12 @@
 		"import/prefer-default-export": "off",
 		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
 		"jsx-a11y/label-has-associated-control": "off",
+		"linebreak-style": 0,
+		"no-tabs": 0,
+		"react/jsx-indent": [2, "tab"],
+		"react/jsx-indent-props": [2, "tab"],
+		"react/forbid-prop-types": 0,
+		"indent": ["error", "tab"],
 		"quotes": [
 			"error",
 			"single"

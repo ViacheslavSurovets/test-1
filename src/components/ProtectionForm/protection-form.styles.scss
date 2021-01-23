@@ -20,6 +20,10 @@
       color: transparent;
     }
 
+		&_blue{
+			color: map-get($primary, 500);
+		}
+		
     &_red{
       color: map-get($error, 600);
     }
@@ -55,25 +59,3 @@
     border-bottom: 1px solid map-get($bg, 500);
   }
 }
-
-.protection-form-input {
-  height: 5rem;
-  width: 4.5rem;
-  border-radius: 4px;
-  border: 1px solid map-get($bg, 500);
-  font-size: 2.5rem;
-  text-align:center;
-  outline: none;
-  user-select: none;
-
-  &:focus {
-    border: 1px solid map-get($primary, 600);
-    box-shadow: 0 0 8px map-get($primary, 400);
-  }
-
-  //&:focus:invalid {
-  //  border: 1px solid map-get($warning, 600);
-  //  box-shadow: 0 0 8px map-get($warning, 400);
-  //}
-}
-

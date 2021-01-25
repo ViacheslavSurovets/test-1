@@ -1,16 +1,14 @@
 @import 'src/styles/main';
 
 .table-component {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 80%;
-	margin: 0 auto;
-	flex-direction: column;
-	min-height: inherit;
+	display: grid;
+	justify-items: center;
+	align-content: center;
+	min-height: 100vh;
+	grid-auto-rows: 100px;
 
   &__table {
-    width: 100%;
+    width: 80%;
     text-align: center;
 
     th {

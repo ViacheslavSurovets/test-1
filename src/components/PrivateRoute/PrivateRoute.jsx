@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
-import P from 'prop-types'
+import PropTypes from 'prop-types'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
 	const isAuthenticated =	window.localStorage.getItem('test')
@@ -21,5 +21,5 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 export default PrivateRoute
 
 PrivateRoute.propTypes = {
-	component: P.func.isRequired,
+	component: PropTypes.func.isRequired,
 }

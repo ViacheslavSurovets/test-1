@@ -1,9 +1,8 @@
 @import 'src/styles/colors';
 
 .protection-form {
-  display: flex;
-  flex-direction: column;
-
+  display: grid;
+	
   &__header {
     font-size: 3rem;
     font-weight: bold;
@@ -34,22 +33,18 @@
   }
 
   &__input-container {
-    display: flex;
+    display: grid;
     margin-top: 3rem;
-
-    & > * {
-      &:not(:last-child){
-        margin-right: 1.5rem;
-      }
-    }
+		grid-template-columns: repeat(3,1fr) .5fr repeat(3,1fr);
+		grid-column-gap: .75rem;
   }
 }
 
 .dash {
   width: 1.5rem;
   height: 5rem;
-	display: flex;
-	justify-content: center;
+	display: grid;
+	justify-self: center;
 	align-items: center;
 
   &:after{

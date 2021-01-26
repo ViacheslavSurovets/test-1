@@ -1,11 +1,11 @@
-@import "src/styles/colors";
+@import "main";
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 #root {
@@ -13,13 +13,29 @@
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
-  box-sizing: border-box;
-  font-size: 62.5%;
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+	font-size: 62.5%;
+
+	@include respond(tab-land) {
+		font-size: 56.25%;
+	}
+	
+	@include respond(tab-port){
+		font-size: 50%; //1rem = 9px, 9/16 = 56.25%
+	}
+
+	@include respond(phone){
+		font-size: 40%; //1rem = 9px, 9/16 = 56.25%
+	}
+	
+	@include respond(big-desktop) {
+		font-size: 75%;
+	}
 }
 
 body {
-  font-size: 1.6rem;
-  color: map-get($text, 900);
+	font-size: 1.6rem;
+	color: map-get($text, 900);
 	min-height: 100vh;
 }

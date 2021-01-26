@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import P from 'prop-types'
+import PropTypes from 'prop-types'
 
 import { CheckboxComponent, ButtonsContainerComponent } from './internal'
 import './protection-form.styles.scss'
@@ -60,5 +60,5 @@ const ProtectionFormComponent = ({ history }) => {
 export default ProtectionFormComponent
 
 ProtectionFormComponent.propTypes = {
-	history: P.any.isRequired,
+	history: PropTypes.any.isRequired,
 }

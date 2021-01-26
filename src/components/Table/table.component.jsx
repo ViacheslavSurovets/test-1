@@ -1,9 +1,11 @@
 import React from 'react'
-import P from 'prop-types'
+import PropTypes from 'prop-types'
 
 import { exportTableToExcel } from './table.utils'
 import { users } from './data.json'
 import './table.styles.scss'
+import { CardContainerComponent } from './internal'
+import InfoBlockComponent from './internal/InfoBlock/info-block.component'
 
 const TableComponent = ({ history }) => {
 	const handleClick = () => {
@@ -13,17 +15,21 @@ const TableComponent = ({ history }) => {
 
 	return (
 		<div className="table-component">
+			<CardContainerComponent />
 			<table id="tbl-data" className="table-component__table">
 				<thead>
 					<tr>
 						<th>Name</th>
 						<th>Email</th>
 						<th>Country</th>
+						<th>Card</th>
+						<th>Date</th>
+						<th>Position</th>
 					</tr>
 				</thead>
 				<tbody>
 					{users.map(({
-						name, email, country, id,
+						name, email, country, id, card, date, position,
 					}, idx) => {
 						if (idx > 2) return
 						return (
@@ -31,6 +37,9 @@ const TableComponent = ({ history }) => {
 								<td>{name}</td>
 								<td>{email}</td>
 								<td>{country}</td>
+								<td>{card}</td>
+								<td>{date}</td>
+								<td>{position}</td>
 							</tr>
 						)
 					})}
@@ -42,6 +51,7 @@ const TableComponent = ({ history }) => {
 				Table Data To Excel File
 			</button>
 			<button type="button" onClick={handleClick} className="table-component__button table-component__button_red">Back</button>
+			<InfoBlockComponent />
 		</div>
 	)
 }
@@ -49,5 +59,5 @@ const TableComponent = ({ history }) => {
 export default TableComponent
 
 TableComponent.propTypes = {
-	history: P.any.isRequired,
+	history: PropTypes.any.isRequired,
 }

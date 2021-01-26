@@ -1,0 +1,15 @@
+@import "src/styles/main";
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 3rem;
+	
+	& > .card:nth-child(odd) {
+		background: map-get($primary,200);
+	}
+	
+	@include respond(phone) {
+		justify-content: center;
+	}
+}

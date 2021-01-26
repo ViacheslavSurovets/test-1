@@ -1,0 +1,15 @@
+@import "src/styles/main";
+
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	background: map-get($error, 200);
+	min-height: 30rem;
+	width: 20rem;
+	margin: 1rem;
+	
+	@include respond(phone) {
+		width: 95vw;
+	}
+}

@@ -5,11 +5,27 @@
 	justify-items: center;
 	align-content: center;
 	min-height: 100vh;
-	grid-auto-rows: 100px;
-
+	//grid-auto-rows: 100px;
+	
   &__table {
     width: 80%;
     text-align: center;
+
+		@include respond(phone) {
+			grid-row: 2;
+		}
+		
+		@include respond(phone){
+			width: 100%;
+		}
+		
+		@mixin deleteColumn {
+			&:nth-child(5){
+				@include respond(phone){
+					display: none;
+				}
+			}
+		}
 
     th {
       color: map-get($bg, 700);
@@ -20,7 +36,10 @@
       background-color: map-get($warning, 500);
       border: 1px solid map-get($bg, 700);
       font-weight: bold;
+			
+			@include deleteColumn;
     }
+		
 
     td {
       color: map-get($bg, 700);
@@ -30,6 +49,8 @@
       white-space: nowrap;
       background-color: $white;
       border: 1px solid map-get($bg, 700);
+
+			@include deleteColumn;
     }
   }
 
@@ -37,9 +58,16 @@
   &__button {
     @include container-button-protection('big');
     margin-top: 3rem;
+
+		@include respond(phone) {
+			grid-row: 3;
+		}
 		
 		&_red {
 			color: map-get($warning, 400);
+			@include respond(phone) {
+				grid-row: 5;
+			}
 		}
   }
 }

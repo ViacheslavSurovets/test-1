@@ -1,0 +1,17 @@
+@import "src/styles/main";
+
+.info-block {
+	width: 80%;
+	min-height: 50rem;
+	border: 1rem solid map-get($secondary, 300);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	text-indent: 5%;
+	margin: 3rem auto;
+	
+	@include respond(phone) {
+		grid-row: 1;
+	}
+}

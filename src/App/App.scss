@@ -1,3 +1,5 @@
+@import "src/styles/main";
+
 .App {
 	width: 50%;
 	min-height: 100vh;
@@ -5,19 +7,29 @@
 	display: grid;
 	align-items: center;
 
+	@include respond(tab-port) {
+		
+	}
+	
+	@include respond (phone){
+		width: 90%;
+	}
+	
+	
+
 	&__logo {
-		//max-width: 25rem;
-		//align-self: center;
-		//justify-self: start;
-		display: grid;
-		height: 100%;
-		grid-template-columns: repeat(4, 1fr [col-start]);
-		grid-template-rows: repeat(4, 1fr [row-start]);
-		grid-template-areas:
-		". . . . "
-		". . logo logo "
-		". . logo logo "
-		". . . . ";
+		max-width: 25rem;
+		align-self: center;
+		justify-self: start;
+		//display: grid;
+		//height: 100%;
+		//grid-template-columns: repeat(4, 1fr [col-start]);
+		//grid-template-rows: repeat(4, 1fr [row-start]);
+		//grid-template-areas:
+		//". . . . "
+		//". . logo logo "
+		//". . logo logo "
+		//". . . . ";
 	}
 
 	&__protection-form {

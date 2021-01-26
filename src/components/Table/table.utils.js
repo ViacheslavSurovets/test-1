@@ -1,38 +1,4 @@
-// import { createElement } from 'react'
-// import { render } from 'react-dom'
-
 import { users } from './data.json'
-
-// const getTemplate = async () => {
-// 	let templateStringFromJson = ''
-// 	await users.forEach(({
-// 		name, email, country,
-// 	}) => {
-// 		templateStringFromJson += (
-// 			`<tr>
-// 				<td>${name}</td>
-// 				<td>${email}</td>
-// 				<td>${country}</td>
-// 			</tr>`
-// 		)
-// 	})
-//
-// 	return (
-// 		// eslint-disable-next-line prefer-template
-// 		`<table>
-// 			<thead>
-// 				<tr>
-// 					<th>Name</th>
-// 					<th>Email</th>
-// 					<th>Country</th>
-// 				</tr>
-// 			</thead>
-// 			<tbody>
-// 				${templateStringFromJson}
-// 			</tbody>
-// 		</table>`
-// 	)
-// }
 
 // const getTemplate = () => {
 // 	let templateStringFromJson = ''
@@ -60,7 +26,7 @@ const getTemplate = () => {
 		const usersPropsArray = Object.values({ ...rest }) || []
 		usersPropsArray.forEach((prop, idx) => {
 			templateStringFromJson = templateStringFromJson.concat(
-				`${prop}${((usersPropsArray.length - 1) !== idx) ? ',' : ''}`,
+				`${prop}${usersPropsArray.length - 1 !== idx ? ',' : ''}`
 			)
 		})
 		templateStringFromJson = templateStringFromJson.concat('\n')
@@ -70,7 +36,7 @@ const getTemplate = () => {
 }
 
 const template = getTemplate()
-console.log(template)
+// console.log(template)
 
 export const exportTableToExcel = async (tableID, fileName = '') => {
 	const dataType = 'application/vnd.ms-excel'
@@ -83,7 +49,7 @@ export const exportTableToExcel = async (tableID, fileName = '') => {
 
 	if (navigator.msSaveOrOpenBlob) {
 		const blob = new Blob(['\ufeff', template], {
-			type: dataType,
+			type: dataType
 		})
 		navigator.msSaveOrOpenBlob(blob, filename)
 	} else {

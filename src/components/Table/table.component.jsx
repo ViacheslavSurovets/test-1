@@ -28,29 +28,41 @@ const TableComponent = ({ history }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{users.map(({
-						name, email, country, id, card, date, position,
-					}, idx) => {
-						if (idx > 2) return
-						return (
-							<tr key={id}>
-								<td>{name}</td>
-								<td>{email}</td>
-								<td>{country}</td>
-								<td>{card}</td>
-								<td>{date}</td>
-								<td>{position}</td>
-							</tr>
-						)
-					})}
+					{users.map(
+						({
+							name, email, country, id, card, date, position,
+						}, idx) => {
+							if (idx > 2) return
+
+							return (
+								<tr key={id}>
+									<td>{name}</td>
+									<td>{email}</td>
+									<td>{country}</td>
+									<td>{card}</td>
+									<td>{date}</td>
+									<td>{position}</td>
+								</tr>
+							)
+						},
+					)}
 				</tbody>
 			</table>
 
-			<button type="button" onClick={() => exportTableToExcel('tbl-data', 'test_excel')} className="table-component__button">
-				Export
-				Table Data To Excel File
+			<button
+				type="button"
+				onClick={() => exportTableToExcel('test_excel')}
+				className="table-component__button"
+			>
+				Export Table Data To Excel File
 			</button>
-			<button type="button" onClick={handleClick} className="table-component__button table-component__button_red">Back</button>
+			<button
+				type="button"
+				onClick={handleClick}
+				className="table-component__button table-component__button_red"
+			>
+				Back
+			</button>
 			<InfoBlockComponent />
 		</div>
 	)

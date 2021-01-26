@@ -20,46 +20,36 @@ import { users } from './data.json'
 // }
 
 const getTemplate = () => {
-	let templateStringFromJson = ''
+	let result = ''
 
 	users.forEach(({ id, ...rest }) => {
 		const usersPropsArray = Object.values({ ...rest }) || []
 		usersPropsArray.forEach((prop, idx) => {
-			templateStringFromJson = templateStringFromJson.concat(
-				`${prop}${usersPropsArray.length - 1 !== idx ? ',' : ''}`
+			result = result.concat(
+				`${prop}${usersPropsArray.length - 1 !== idx ? ',' : ''}`,
 			)
 		})
-		templateStringFromJson = templateStringFromJson.concat('\n')
+		result = result.concat('\n')
 	})
 
-	return templateStringFromJson
+	return result
 }
 
 const template = getTemplate()
-// console.log(template)
 
-export const exportTableToExcel = async (tableID, fileName = '') => {
+export const exportTableToExcel = async (fileName = 'excel_data') => {
 	const dataType = 'application/vnd.ms-excel'
-
-	// Specify file name
-	const filename = fileName ? `${fileName}.xls` : 'excel_data.xls'
-
-	// Create download link element
-	const downloadLink = document.createElement('a')
+	const filename = `${fileName}.xls`
 
 	if (navigator.msSaveOrOpenBlob) {
 		const blob = new Blob(['\ufeff', template], {
-			type: dataType
+			type: dataType,
 		})
 		navigator.msSaveOrOpenBlob(blob, filename)
 	} else {
-		// Create a link to the file
-
+		const downloadLink = document.createElement('a')
 		downloadLink.href = `data:${dataType}, ${template}`
-
-		// Setting the file name
 		downloadLink.download = filename
-		// triggering the function
 		downloadLink.click()
 	}
 }

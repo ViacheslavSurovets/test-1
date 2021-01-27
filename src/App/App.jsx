@@ -5,6 +5,14 @@ import {
 	ProtectionForm, LogoComponent, TableComponent, PrivateRoute,
 } from '../components'
 import './App.scss'
+import { LimitCardComponent } from '../components/LimitCard'
+
+const mockLimitCardData = {
+	available: '30000',
+	spent: '10000',
+	total: '40000',
+	id: '1',
+}
 
 const App = () => (
 	<>
@@ -22,7 +30,16 @@ const App = () => (
 					</div>
 				)}
 			/>
+
 			<PrivateRoute exact path="/" component={TableComponent} />
+			<Route
+				path="/graphic"
+				render={() => (
+					<div className="limit-card-component-wrapper">
+						<LimitCardComponent data={mockLimitCardData} />
+					</div>
+				)}
+			/>
 		</Switch>
 	</>
 )

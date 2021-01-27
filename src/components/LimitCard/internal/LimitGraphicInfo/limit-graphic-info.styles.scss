@@ -1,0 +1,34 @@
+@import 'src/styles/main';
+
+.limit-graphic-info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	
+	
+	&__container {
+		position: relative;
+		display: inline-block;
+	}
+	
+	&__icon {
+		transform: rotate(-84deg);
+	}
+	
+	&__text-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		top: 15%;
+		width: 70%;
+		height: 70%;
+		left: 15%;
+		
+		& > * {
+				margin-top: 1.5rem;
+			
+		}
+	}
+}

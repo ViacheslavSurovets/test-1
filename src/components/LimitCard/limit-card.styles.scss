@@ -1,0 +1,11 @@
+@import './src/styles/main';
+
+.limit-card-component {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 40rem;
+	height: 40rem;
+	box-shadow: 0 0 4px 0 map-get($bg, 500);
+	padding: 1rem;
+}

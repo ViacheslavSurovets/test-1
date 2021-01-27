@@ -10,7 +10,7 @@ const AmountInfoComponent = ({ data: { total, id, ...rest } }) => {
 	return (
 		<div className="amount-info-component">
 			{
-				// eslint-disable-next-line react/no-array-index-key
+				// eslint-disable-next-line react/no-array-index-key,max-len
 				dataArray && dataArray.map((item, idx) => <AmountInfoItem key={idx} data={item} total={total} />)
 			}
 		</div>

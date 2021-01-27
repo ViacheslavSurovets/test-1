@@ -38,6 +38,6 @@ const LimitGraphicInfoIconComponent = ({ greenLineWidth, blueLineWidth }) => (
 export default LimitGraphicInfoIconComponent
 
 LimitGraphicInfoIconComponent.propTypes = {
-	greenLineWidth: PropTypes.string.isRequired,
-	blueLineWidth: PropTypes.string.isRequired,
+	greenLineWidth: PropTypes.number.isRequired,
+	blueLineWidth: PropTypes.number.isRequired,
 }

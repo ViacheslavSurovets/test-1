@@ -38,7 +38,10 @@ l-16-128c0-8.836,7.164-16,16-16h64c8.836,0,16,7.164,16,16L288,272z"
 export default AttentionIcon
 
 AttentionIcon.propTypes = {
-	width: PropTypes.string.isRequired,
-	height: PropTypes.string.isRequired,
-	color: PropTypes.string.isRequired,
+	// eslint-disable-next-line react/require-default-props
+	width: PropTypes.string,
+	// eslint-disable-next-line react/require-default-props
+	height: PropTypes.string,
+	// eslint-disable-next-line react/require-default-props
+	color: PropTypes.string,
 }

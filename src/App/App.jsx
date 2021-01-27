@@ -9,7 +9,7 @@ import { LimitCardComponent } from '../components/LimitCard'
 
 const mockLimitCardData = {
 	available: '30000',
-	spent: '10000',
+	spent: '30000',
 	total: '40000',
 	id: '1',
 }

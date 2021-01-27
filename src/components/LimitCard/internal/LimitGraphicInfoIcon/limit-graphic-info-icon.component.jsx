@@ -15,7 +15,7 @@ const LimitGraphicInfoIconComponent = ({ greenLineWidth, blueLineWidth }) => (
 			cx="100"
 			cy="100"
 			r="90"
-			strokeDasharray={`${greenLineWidth} 600`}
+			strokeDasharray={`${greenLineWidth}, 600`}
 			stroke="#00c969"
 			fill="transparent"
 			strokeLinecap="round"
@@ -26,7 +26,7 @@ const LimitGraphicInfoIconComponent = ({ greenLineWidth, blueLineWidth }) => (
 			cx="100"
 			cy="100"
 			r="90"
-			strokeDasharray={`${blueLineWidth} 600`}
+			strokeDasharray={`${blueLineWidth}, 600`}
 			stroke="#000584"
 			fill="transparent"
 			strokeLinecap="round"

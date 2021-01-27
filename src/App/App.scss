@@ -29,20 +29,27 @@
 		//". . . . ";
 	}
 
+	@mixin protection-form-respond {
+		align-self: start;
+		margin-top: 5rem;
+	}
+	
 	&__protection-form {
 		//align-self: center;
 		//justify-self: center;
 		place-self: center;
 		
 		@include respond (phone){
-			align-self: start;
-			margin-top: 5rem;
-		}
-
+		 @include protection-form-respond
+		};
+		
 		@include respond (tab-port){
-			align-self: start;
-			margin-top: 5rem;
-		}
+			@include protection-form-respond
+		};
+
+		@include respond (tab-land){
+			@include protection-form-respond
+		};
 	}
 }
 

@@ -2,14 +2,14 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import {
-	ProtectionForm, LogoComponent, TableComponent, PrivateRoute,
+	ProtectionForm, LogoComponent, TableComponent, PrivateRoute, SwitchComponent,
 } from '../components'
 import './App.scss'
 import { LimitCardComponent } from '../components/LimitCard'
 
 const mockLimitCardData = {
-	available: '30000',
-	spent: '30000',
+	available: '20000',
+	spent: '20000',
 	total: '40000',
 	id: '1',
 }
@@ -39,6 +39,10 @@ const App = () => (
 						<LimitCardComponent data={mockLimitCardData} />
 					</div>
 				)}
+			/>
+			<Route
+				path="/switch"
+				component={SwitchComponent}
 			/>
 		</Switch>
 	</>

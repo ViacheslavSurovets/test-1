@@ -1,0 +1,76 @@
+@import 'src/styles/main';
+
+.switch-component {
+	--height: 90%;
+	--widthOfBox: 10rem;
+	--width: calc(var(--height) / 2);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	cursor: pointer;
+
+	&__box {
+		position: relative;
+		border-radius: 30%;
+		width: var(--widthOfBox);
+		height: 5rem;
+		border: 2px solid $white;
+		touch-action: none;
+		user-select: none;
+		box-shadow: 0 0 4px $black;
+		display: flex;
+		align-items: center;
+
+		.switch-component__circle {
+			transition: all .2s ease;
+		}
+
+		&_toggle-side {
+			.switch-component__circle {
+				left: 42px;
+			}
+		}
+
+		&_toggle-side-left {
+			.switch-component__circle {
+				left: 0;
+			}
+		}
+	}
+
+	&__circle {
+		height: var(--height);
+		width: var(--width);
+		border-radius: 50%;
+		background: map-get($bg, 100);
+		box-shadow: 0 0 4px $black;
+		position: absolute;
+		left: 0;
+		z-index: 5;
+	}
+
+	@mixin switch-background {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 80%;
+		opacity: .5;
+		margin-left: 5%;
+		margin-top: 5%;
+		border-radius: 30%;
+	}
+
+	&__green-background {
+		@include switch-background;
+		background: map-get($secondary, 500);
+		width: 90%;
+		transition: all .5s ease-in-out;
+		
+		&_to-red {
+			background: map-get($error, 500);
+			transition: all .5s ease-in-out;
+		}
+	}
+}

@@ -4,12 +4,10 @@ import './amount-info-item.styles.scss'
 import PropTypes from 'prop-types'
 import { CircleIcon, AttentionIcon } from '..'
 
-const AmountInfoItemComponent = ({ data, total }) => {
+const AmountInfoItemComponent = ({ data }) => {
 	// eslint-disable-next-line prefer-const
-	let [text, spent] = data
-	text = text.charAt(0).toUpperCase() + text.slice(1)
-
-	const available = total - spent
+	let [text, value] = data
+	text = text[0].toUpperCase() + text.slice(1)
 
 	return (
 		<div className="amount-info-item-component">
@@ -21,7 +19,7 @@ const AmountInfoItemComponent = ({ data, total }) => {
 
 			<div className="amount-info-item-component__result">
 				<CircleIcon text={text} />
-				<span className="text__bold text__big">{ text === 'Spent' ? `$${spent}` : `$${available}`}</span>
+				<span className="text__bold text__big">{ value }</span>
 			</div>
 		</div>
 	)

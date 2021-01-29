@@ -5,6 +5,7 @@ import { AttentionIcon, LimitGraphicInfoIcon } from '..'
 import './limit-graphic-info.styles.scss'
 
 const LimitGraphicInfoComponent = ({ data: { spent, total } }) => {
+	// remove magic strings
 	const greenLineWidth = Math.round(560 * (spent / total))
 	const blueLineWidth = Math.round(greenLineWidth * 0.66)
 

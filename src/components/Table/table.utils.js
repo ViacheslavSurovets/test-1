@@ -1,39 +1,35 @@
 import { users } from './data.json'
 
-// const getTemplate = () => {
-// 	let templateStringFromJson = ''
-//
-// 	// eslint-disable-next-line no-restricted-syntax
-// 	for (const user of users) {
-// 	for (let {id, ...rest} of users) {
-// 		delete user.id
-// 		const usersPropsArray = Object.values(...rest) || []
-//
-// 		usersPropsArray.forEach((prop, idx) => {
-// 			templateStringFromJson = templateStringFromJson.concat(
-// 				`${prop}${((usersPropsArray.length - 1) !== idx) ? ',' : ''}`,
-// 			)
-// 		})
-// 		templateStringFromJson = templateStringFromJson.concat('\n')
-// 	}
-// 	return templateStringFromJson
-// }
-
 const getTemplate = () => {
-	let result = ''
+	let templateStringFromJson = ''
 
-	users.forEach(({ id, ...rest }) => {
-		const usersPropsArray = Object.values({ ...rest }) || []
+	for (const { id, ...rest } of users) {
+		const usersPropsArray = Object.values(rest)
 		usersPropsArray.forEach((prop, idx) => {
-			result = result.concat(
-				`${prop}${usersPropsArray.length - 1 !== idx ? ',' : ''}`,
+			templateStringFromJson = templateStringFromJson.concat(
+				`${prop}${((usersPropsArray.length - 1) !== idx) ? ',' : ''}`,
 			)
 		})
-		result = result.concat('\n')
-	})
-
-	return result
+		templateStringFromJson = templateStringFromJson.concat('\n')
+	}
+	return templateStringFromJson
 }
+
+// const getTemplate = () => {
+// 	let result = ''
+//
+// 	users.forEach(({ id, ...rest }) => {
+// 		const usersPropsArray = Object.values({ ...rest }) || []
+// 		usersPropsArray.forEach((prop, idx) => {
+// 			result = result.concat(
+// 				`${prop}${usersPropsArray.length - 1 !== idx ? ',' : ''}`,
+// 			)
+// 		})
+// 		result = result.concat('\n')
+// 	})
+//
+// 	return result
+// }
 
 const template = getTemplate()
 

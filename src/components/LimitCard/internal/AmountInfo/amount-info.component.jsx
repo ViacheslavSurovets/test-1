@@ -5,13 +5,12 @@ import { AmountInfoItem } from '..'
 import './amoutn-info.styles.scss'
 
 const AmountInfoComponent = ({ data: { total, id, ...rest } }) => {
-	const dataArray = Object.entries(rest)
+	const dataArray = Object.entries(rest) || []
 
 	return (
 		<div className="amount-info-component">
 			{
-				// eslint-disable-next-line react/no-array-index-key,max-len
-				dataArray && dataArray.map((item, idx) => <AmountInfoItem key={idx} data={item} total={total} />)
+				dataArray && dataArray.map((item, idx) => <AmountInfoItem key={idx} data={item} />)
 			}
 		</div>
 	)

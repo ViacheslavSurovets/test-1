@@ -17,21 +17,21 @@ const mockLimitCardData = {
 const App = () => (
 	<>
 		<Switch>
-			<Route
-				path="/login"
-				render={({ history }) =>	(
-					<div className="App">
-						<div className="App__logo">
-							<LogoComponent />
-						</div>
-						<div className="App__protection-form">
-							<ProtectionForm history={history} />
-						</div>
-					</div>
-				)}
-			/>
+			{/* <Route */}
+			{/*	path="/login" */}
+			{/*	render={({ history }) =>	( */}
+			{/*		<div className="App"> */}
+			{/*			<div className="App__logo"> */}
+			{/*				<LogoComponent /> */}
+			{/*			</div> */}
+			{/*			<div className="App__protection-form"> */}
+			{/*				<ProtectionForm history={history} /> */}
+			{/*			</div> */}
+			{/*		</div> */}
+			{/*	)} */}
+			{/* /> */}
 
-			<PrivateRoute exact path="/" component={TableComponent} />
+			<Route path="/table" component={TableComponent} />
 			<Route
 				path="/graphic"
 				render={() => (

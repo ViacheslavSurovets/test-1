@@ -24,14 +24,9 @@ export const useSwitch = () => {
 	async function onMouseUp() {
 		const isBetweenLeftAndRightSide = newCircleLeft > 0 < rightEdge
 		const greaterThenAverageNewLeft = newCircleLeft >= (rightEdge - newCircleLeft)
-		const lessThenAverageNextLeft = newCircleLeft < (rightEdge - newCircleLeft)
 
-		if (isBetweenLeftAndRightSide && greaterThenAverageNewLeft) {
-			await 	setToggle(true)
-		}
-		if (isBetweenLeftAndRightSide && lessThenAverageNextLeft) {
-			await setToggle(false)
-		}
+		await setToggle(isBetweenLeftAndRightSide && greaterThenAverageNewLeft)
+
 		setDrag(false)
 		document.removeEventListener('mouseup', onMouseUp)
 		document.removeEventListener('mousemove', onMouseMove)
@@ -50,7 +45,9 @@ export const useSwitch = () => {
 		if (drag) {
 			return { left: newCircleLeft }
 		}
-		return toggle ? { left: refContainer.current?.offsetWidth - refCircle.current?.offsetWidth - marginForCircle } : { left: 0 }
+		return toggle
+			? { left: refContainer.current?.offsetWidth - refCircle.current?.offsetWidth - marginForCircle }
+			:	{ left: 0 }
 	}
 
 	return {
